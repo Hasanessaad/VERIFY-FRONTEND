@@ -1566,43 +1566,54 @@
               <div class="flex flex-col items-center gap-6">
                 <div class="w-full max-w-[1200px] rounded-lg bg-white px-[24px] py-[20px] dark:bg-darkblack-600">
 
-                  <!-- Section Title -->
-                  <h3 class="text-xl font-semibold text-bgray-900 dark:text-white mb-4">
-                    Upload Bank Statement (Extrato)
-                  </h3>
+                  <div class="flex flex-col space-y-5">
 
-                  <!-- Upload Area -->
-                  <div class="flex flex-col items-center justify-center w-full p-10 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition dark:border-gray-600 dark:hover:border-blue-400">
+                    <div class="w-full flex flex-col gap-4">
 
-                    <!-- Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                      class="w-12 h-12 text-gray-400 mb-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M7 16V4m0 0L3 8m4-4l4 4M17 20v-8m0 0l4 4m-4-4l-4 4"/>
-                    </svg>
+                      <!-- Banco Button -->
+                      <div class="flex gap-4 relative">
+                        <button type="button" onclick="toggleDropdown()"
+                          class="flex-1 rounded-lg bg-blue-500 py-3 text-white text-lg font-semibold hover:bg-blue-600 text-center">
+                          SELECT BANCO
+                        </button>
 
-                    <p class="text-gray-600 dark:text-gray-300">
-                      Drag and drop your <span class="font-semibold">CSV Extrato</span> here
-                    </p>
+                        <!-- Dropdown list -->
+                        <ul id="bankList"
+                          class="absolute top-14 left-0 w-full bg-white rounded-lg shadow-lg hidden text-lg font-medium">
 
-                    <p class="text-sm text-gray-400 mt-1">
-                      or click to select a file
-                    </p>
+                          <li class="px-4 py-3 hover:bg-gray-200 cursor-pointer">XP</li>
+                          <li class="px-4 py-3 hover:bg-gray-200 cursor-pointer">ITAU</li>
+                          <li class="px-4 py-3 hover:bg-gray-200 cursor-pointer">BRB</li>
 
-                    <!-- File input -->
-                    <input type="file" name="extrato" accept=".csv" class="hidden" id="csvUpload">
+                        </ul>
+                      </div>
+                      <!-- Date Label -->
+                      <span class="text-lg font-semibold text-white">
+                        DATA INICIO
+                      </span>
+                      <!-- Date Input -->
+                      <input type="text" placeholder="Enter Extrato date..."
+                        class="w-full rounded-lg bg-bgray-100 px-4 py-3 text-lg text-black dark:text-white dark:bg-darkblack-500 focus:outline-none" />
 
-                    <!-- Button -->
-                    <label for="csvUpload"
-                      class="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition">
-                      Select CSV File
-                    </label>
+                      <span class="text-lg font-semibold text-white">
+                        NOME DO OPERADOR
+                      </span>
+                      <!-- Operator Input -->
+                      <input type="text" placeholder="Enter Operator nickname..."
+                        class="w-full rounded-lg bg-bgray-100 px-4 py-3 text-lg text-black dark:text-white dark:bg-darkblack-500 focus:outline-none" />
+
+                      <!-- Confirm Button -->
+                      <button type="button"
+                        class="w-full rounded-lg bg-success-300 py-3 text-white text-lg font-semibold hover:opacity-90">
+                        Confirm
+                      </button>
+
+                    </div>
+
+                    <div class="filter-content w-full"></div>
+                    <div class="pagination-content w-full"></div>
 
                   </div>
-
                 </div>
               </div>
               <!--list table 1-->
